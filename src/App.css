@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -30,4 +32,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.loginform
+{
+    width: 320px;
+  margin-top: 20%;
+  margin-left: 60%;
+;
 }
