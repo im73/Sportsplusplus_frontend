@@ -22,13 +22,13 @@ export default class Axios {
         //     loading = document.getElementById('ajaxLoading');
         //     loading.style.display = 'block';
         // }
-        if(options.url=='/back_login') ;
-        else{
-            if (localStorage.getItem("username"));
-            else
-                window.location.href="/login";
-        }
-        let baseApi = '/api';
+        // if(options.url=='/back_login') ;
+        // else{
+        //     if (localStorage.getItem("username"));
+        //     else
+        //         window.location.href="/login";
+        // }
+        let baseApi = 'http://114.116.156.240/api';
         return new Promise((resolve,reject)=>{
             axios({
                 url:options.url,
@@ -43,11 +43,11 @@ export default class Axios {
                 //     loading.style.display = 'none';
                 // }
 
-                console.log(response.data);
+                // console.log(response.data);
                     resolve(response);
 
 
-            })
+            }).catch()
         });
     }
 }

@@ -27,6 +27,7 @@ export default class ERouter extends React.Component{
                                     <Route path="/user/app"      component={AppUser} />
                                     <Route path="/manage/player" component={Team} />
                                     <Route path="/manage/team"   component={Player} />
+                                    <Route path="/home"          component={Home} />
                                     {/*<Route path="/ui/modals" component={Modals} />*/}
                                     {/*<Route path="/ui/loadings" component={Loadings} />*/}
                                     {/*<Route path="/ui/notification" component={Notice} />*/}

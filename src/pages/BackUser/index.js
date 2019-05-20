@@ -1,10 +1,11 @@
 import React from 'react'
 import moment from "moment";
 import axios from '../../axios/index'
-import {Table, message, Modal, Input} from 'antd'
+import {Table, message, Modal, Input, Avatar} from 'antd'
 import './index.less'
 import Button from "antd/es/button";
 const Search = Input.Search;
+const colorList = ['#f56a00', '#7265e6', '#ffbf00', '#00a2ae'];
 export default class  BackUser extends React.Component
 {
 
@@ -160,24 +161,42 @@ export default class  BackUser extends React.Component
             title: 'ID',
             dataIndex: 'id',
             key: 'id',
+            align: 'center',
         }, {
+            title: '头像',
+            dataIndex: '',
+            key: '',
+            align: 'center',
+            render: (text, record) => {
+                return (
+                    <div >
+                        <Avatar style={{ backgroundColor: colorList[record.id%4], verticalAlign: 'middle'}}  size="large">
+                            {record.truename[0]}
+                        </Avatar>
+                    </div>)
+            }
+        },
+        {
             title: '用户名',
             dataIndex: 'username',
             key: 'username',
+            align: 'center',
         }, {
             title: '真实姓名',
             dataIndex: 'truename',
             key: 'truename',
+                align: 'center',
 
         },{
             title: '电话号码',
             dataIndex: 'phnumber',
             key: 'phnumber',
-
+                align: 'center',
         }, {
             title: '添加时间',
             dataIndex: 'addtime',
             key: 'addtime',
+                align: 'center',
         },{
             title: '操作',
             dataIndex: '',
@@ -200,7 +219,7 @@ export default class  BackUser extends React.Component
 
 
         return (
-            <div>
+            <div className={"backuser"}>
                 <p className={"title"}>后台人员信息表 </p>
 
                 <Search
@@ -245,16 +264,16 @@ export default class  BackUser extends React.Component
                 </Modal>
 
                 <Table columns={columns}
-                       dataSource={this.state.sourceData.filter(item => (
-                           item.truename.indexOf(this.state.searchvalue)!==-1
-                       )) }
+                       dataSource={(this.state.sourceData).filter(item => item.truename.indexOf(this.state.searchvalue)!==-1) }
                        loading={this.state.loading} className="table"
+                       // dataSource={[]}
                        rowKey={record => record.id}
                        bordered
                        size={"small"}
                        pagination={{
                            pageSize: 10,
                        }}
+                      className={"tableback"}
                 />
 
             </div>

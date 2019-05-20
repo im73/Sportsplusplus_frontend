@@ -19,24 +19,24 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <div className="login-page">
-                <div className="login-header">
-                    <div className="logo">
+            <div className={"login-page"}>
+                <div className={"login-header"}>
+                    <div className={"logo"}>
                         <img src="/assets/logo-ant.svg" alt="Sports++后台管理系统"/>
                         Sports++ 后台管理系统
                     </div>
                 </div>
-                <div className="login-content-wrap">
-                    <div className="login-content">
-                        <div className="word">Sports++ <br />你的比赛记录者</div>
-                        <div className="login-box">
+                <div className={"login-content-wrap"}>
+                    <div className={"login-content"}>
+                        <div className={"word"}>Sports++ <br />你的比赛记录者</div>
+                        <div className={"login-box"}>
                             <div className="error-msg-wrap">
                                 <div
                                     className={this.state.errorMsg?"show":""}>
                                     {this.state.errorMsg}
                                 </div>
                             </div>
-                            <div className="title">登录</div>
+                            <div className={"title"}>登录</div>
                             <LoginForm ref="login" loginSubmit={this.loginReq}/>
                         </div>
                     </div>
@@ -74,7 +74,7 @@ class LoginForm extends React.Component {
                     {
                         message.success('登录成功');
                         localStorage.setItem("username",formValue.username);
-                        window.location.href = '/#/'+'?username='+formValue.username;
+                        window.location.href = '/#/home'+'?username='+formValue.username;
 
                     }
                     else
@@ -108,7 +108,7 @@ class LoginForm extends React.Component {
     render() {
         const { getFieldDecorator } = this.props.form;
         return (
-            <Form className="login-form" labelCol={{ span: 4 }} wrapperCol={{ span: 18 }}>
+            <Form className={"login-form"} labelCol={{ span: 4 }} wrapperCol={{ span: 18 }}>
                 <FormItem label="账号">
                     {getFieldDecorator('username', {
 
@@ -126,7 +126,7 @@ class LoginForm extends React.Component {
                     )}
                 </FormItem>
                 <FormItem>
-                    <Button type="primary" onClick={this.loginSubmit} className="login-form-button">
+                    <Button type="primary" onClick={this.loginSubmit} className={"login-form-button"}>
                         登录
                     </Button>
                 </FormItem>

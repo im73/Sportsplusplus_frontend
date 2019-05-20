@@ -25,11 +25,19 @@ export default  class Admin extends React.Component
                 </Col>
                 <Col span={20}>
                     <Header default={this.state.username}/>
-                    <Row className="content">
+                    <Row className="main_content">
                         {this.props.children}
                     </Row>
+
+
+
+                </Col>
+                <Col span={20} >
                     <Footer/>
                 </Col>
+
+
+
             </Row>
         );
     }

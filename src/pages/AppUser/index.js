@@ -38,7 +38,7 @@ export default class  AppUser extends React.Component
             {
                 console.log(record.toString());
                 const dataSource = [...this.state.sourceData];
-                this.setState({ sourceData: dataSource.filter(item => (item.key !== record.key)) });
+                this.setState({ sourceData: dataSource.filter(item => (item.id !== record.id)) });
                 message.success("删除成功");
                 console.log(this.state.sourceData)
 
@@ -138,7 +138,7 @@ export default class  AppUser extends React.Component
             })
         }
         return (
-            <div>
+            <div className={"appuser"}>
                 <p className={"title"}>用户信息表 </p>
                 <Search
                     placeholder="input search text"
@@ -161,16 +161,17 @@ export default class  AppUser extends React.Component
                     <p>邮箱</p> <Input  allowClear id={'email'} defaultValue={this.state.modaldata.email}/>
 
                 </Modal>
-                <Table columns={columns} dataSource=
-                    {this.state.sourceData.filter(item => (
-                    item.nick_name.indexOf(this.state.searchvalue)!==-1
-                )) }
+                <Table columns={columns}
+                       dataSource={this.state.sourceData.filter(item => (item.nick_name.indexOf(this.state.searchvalue)!==-1)) }
+
                        loading={this.state.loading} className="table" rowKey={record => record.id} bordered
                        size={"small"}
                        pagination={{
 
                            pageSize: 8,
-                       }}/>
+                       }}
+                       className={"tableapp"}
+                />
 
             </div>
         );
