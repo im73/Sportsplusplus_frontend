@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from "moment";
 import axios from '../../axios/index'
-import {Table, message, Modal, Input} from 'antd'
+import {Table, message, Modal, Input, Breadcrumb, Icon} from 'antd'
 import './index.less'
 import Button from "antd/es/button";
 const Search = Input.Search;
@@ -42,6 +42,12 @@ export default class  AppUser extends React.Component
                 message.success("删除成功");
                 console.log(this.state.sourceData)
 
+            }
+            else if (res.status===400)
+            {
+                message.warning("用户不存在");
+                const dataSource = [...this.state.sourceData];
+                this.setState({ sourceData: dataSource.filter(item => (item.id !== record.id)) });
             }
         });
     }
@@ -139,6 +145,17 @@ export default class  AppUser extends React.Component
         }
         return (
             <div className={"appuser"}>
+                <Breadcrumb className={"bread_app"}>
+                    <Breadcrumb.Item >
+                        <Icon type="home" />  首页
+                    </Breadcrumb.Item>
+                    <Breadcrumb.Item >
+                        <Icon type="user" />  用户管理
+                    </Breadcrumb.Item>
+                    <Breadcrumb.Item >
+                        <Icon type="mobile" />  APP用户
+                    </Breadcrumb.Item>
+                </Breadcrumb>
                 <p className={"title"}>用户信息表 </p>
                 <Search
                     placeholder="input search text"

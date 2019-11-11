@@ -8,6 +8,7 @@ import BackUser from './pages/BackUser'
 import AppUser from './pages/AppUser'
 import Team from './pages/Team'
 import Player from './pages/Player'
+import Game from './pages/Game'
 
 export default class ERouter extends React.Component{
 
@@ -28,6 +29,7 @@ export default class ERouter extends React.Component{
                                     <Route path="/manage/player" component={Team} />
                                     <Route path="/manage/team"   component={Player} />
                                     <Route path="/home"          component={Home} />
+                                    <Route path="/MyGame"        component={Game} />
                                     {/*<Route path="/ui/modals" component={Modals} />*/}
                                     {/*<Route path="/ui/loadings" component={Loadings} />*/}
                                     {/*<Route path="/ui/notification" component={Notice} />*/}
@@ -48,8 +50,8 @@ export default class ERouter extends React.Component{
                                     {/*<Route path="/charts/pie" component={Pie} />*/}
                                     {/*<Route path="/charts/line" component={Line} />*/}
                                     {/*<Route path="/permission" component={Permission} />*/}
-                                    {/*<Redirect to="/home" />*/}
-                                    {/* <Route component={NoMatch} /> */}
+                                    <Redirect to="/login" />
+
                                 </Switch>
                             </Admin>
                         } />

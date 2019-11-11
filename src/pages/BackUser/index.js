@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from "moment";
 import axios from '../../axios/index'
-import {Table, message, Modal, Input, Avatar} from 'antd'
+import {Table, message, Modal, Input, Avatar, Breadcrumb, Icon} from 'antd'
 import './index.less'
 import Button from "antd/es/button";
 const Search = Input.Search;
@@ -220,6 +220,17 @@ export default class  BackUser extends React.Component
 
         return (
             <div className={"backuser"}>
+                <Breadcrumb className={"bread_back"}>
+                    <Breadcrumb.Item >
+                        <Icon type="home" />  首页
+                    </Breadcrumb.Item>
+                    <Breadcrumb.Item >
+                        <Icon type="user" />  用户管理
+                    </Breadcrumb.Item>
+                    <Breadcrumb.Item >
+                        <Icon type="desktop" />  后台用户
+                    </Breadcrumb.Item>
+                </Breadcrumb>
                 <p className={"title"}>后台人员信息表 </p>
 
                 <Search

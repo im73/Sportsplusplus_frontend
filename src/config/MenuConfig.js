@@ -1,6 +1,7 @@
 const menuList = [
     {
         title:'首页',
+        breadcrumbName:'首页',
         key:'/home'
     },
     // {
@@ -44,34 +45,39 @@ const menuList = [
     {
         title:'用户管理',
         key:'/user',
+        breadcrumbName:'用户管理',
         children:[
             {
                 title:'app用户',
                 key:'/user/app',
+                breadcrumbName:'APP用户',
             },
             {
-                title:'后端用户',
+                title:'后台用户',
                 key:'/user/back',
+                breadcrumbName:'后台用户',
             }
         ]
     },
     {
-        title:'数据管理',
+        title:'数据分析',
         key:'/manage',
         children:[
             {
-                title:'球员信息管理',
+                title:'球队关注统计',
                 key:'/manage/player',
+                breadcrumbName:'球队关注',
             },
             {
-                title:'球队信息管理',
+                title:'球队信息统计',
                 key:'/manage/team',
+                breadcrumbName:'球队信息统计',
             }
         ]
     },
     {
-        title:'论坛管理',
-        key:'/forum',
+        title:'我的比赛',
+        key:'/MyGame',
         // children:[
         //     {
         //         title:'基础表格',

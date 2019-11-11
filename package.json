@@ -6,6 +6,7 @@
     "antd": "^3.16.0",
     "axios": "^0.18.0",
     "customize-cra": "^0.2.12",
+    "echarts": "^4.2.1",
     "echarts-for-react": "^2.0.15-beta.0",
     "jsonp": "latest",
     "less": "^3.9.0",

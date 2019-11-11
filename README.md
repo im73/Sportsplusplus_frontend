@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sportsplusplus
+## 项目说明
+这是北航2019年软工项目——Sportsplusplus(一个看NBA比赛的平台)
+整个项目分为以下三个部分：
 
-## Available Scripts
+- 安卓端——提供一个看NBA球队比赛比分信息，球队球员信息等平台
+- [网页端](https://github.com/im73/Sportsplusplus_frontend)——主要用于后台人员分析用户的活跃度，球队的关注度
+- [后端](https://github.com/im73/Sportsplusplus)——所有的数据逻辑都由后端提供。包括爬虫和后台api部分
 
-In the project directory, you can run:
+## 配置说明
+安卓端使用原生android,版本是8.0.
 
-### `npm start`
+网页端使用的是React
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+后端使用的是Django
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+数据库使用的是mysql5.7
 
-### `npm test`
+后端部署是通过 ngix + uwsgi 
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 前端说明
 
-### `npm run build`
+包括手机端活跃用户统计，用户的关注球队统计，用户管理，用户创建的比赛信息
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## usage
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+> yarn start

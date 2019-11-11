@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './index.less'
 
-import {Row, Col, Card, message} from 'antd'
+import {Row, Col, Card, message, Breadcrumb, Icon} from 'antd'
 import Login from "../../admin";
 import NumberCard from '../../components/NumberCard'
 import axios from "../../axios";
@@ -18,9 +18,9 @@ export default class Home extends React.Component{
 
     state={
         numbers:[
-            {color: "#8fc9fb",icon: "user-add",number: 3241,title: "新增用户"},
-            {color: "red",icon: "user",number: 2781,title: "活跃用户"},
-            {color: "#64ea91",icon: "team",number: 2781,title: "总用户"},
+            {color: "#8fc9fb",icon: "user-add",number: 0,title: "新增用户"},
+            {color: "red",icon: "user",number: 0,title: "活跃用户"},
+            {color: "#64ea91",icon: "team",number: 0,title: "总用户"},
         ],
         qoute:{
             name:"Michael Jordan",
@@ -61,7 +61,7 @@ export default class Home extends React.Component{
         }).then((res)=>{
 
             if(res.status == 'success'){
-                console.log(res);
+
                 let data = res.results[0].weather_data[0];
                 let now = new Date();
                 let hour = now.getHours();
@@ -93,7 +93,15 @@ export default class Home extends React.Component{
             </Col>
         ));
         return (
+
             <Row className={"home-wrap"} gutter={24}>
+                <Col offset={1} >
+                    <Breadcrumb className={"bread_home"}>
+                        <Breadcrumb.Item >
+                            <Icon type="home" />  首页
+                        </Breadcrumb.Item>
+                    </Breadcrumb>
+                </Col>
                 <Col offset={1} className={"cardgroup"} >
                 {numberCards}
                 </Col>

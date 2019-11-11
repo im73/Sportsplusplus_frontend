@@ -1,6 +1,6 @@
 import JsonP from 'jsonp'
 import axios from 'axios'
-import { Modal } from 'antd'
+import { Modal ,message} from 'antd'
 export default class Axios {
     static jsonp(options) {
         return new Promise((resolve, reject) => {
@@ -22,12 +22,13 @@ export default class Axios {
         //     loading = document.getElementById('ajaxLoading');
         //     loading.style.display = 'block';
         // }
-        // if(options.url=='/back_login') ;
-        // else{
-        //     if (localStorage.getItem("username"));
-        //     else
-        //         window.location.href="/login";
-        // }
+        if(options.url==='/back_login') ;
+        else{
+            console.log(localStorage.getItem("username"));
+            if (localStorage.getItem("username"));
+            else
+                window.location.href="/login";
+        }
         let baseApi = 'http://114.116.156.240/api';
         return new Promise((resolve,reject)=>{
             axios({
@@ -44,10 +45,13 @@ export default class Axios {
                 // }
 
                 // console.log(response.data);
-                    resolve(response);
+                console.log(response.data);
+                resolve(response);
 
 
-            }).catch()
+            }).catch((data)=>{
+                message.error("");
+            })
         });
     }
 }

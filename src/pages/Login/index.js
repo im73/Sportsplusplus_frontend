@@ -4,9 +4,11 @@ import {
 } from 'antd';
 import axios from '../../axios/index'
 import Footer from '../../components/Footer'
-import Utils from '../../utils/utils'
+
+
 import './index.less'
 const FormItem = Form.Item;
+const item={date:'2019-02-03',home:{'name':'76人','total':'0'},away:{'name':'雷霆','total':'0'},time:"8:00",finish:0};
 
 export default class Login extends React.Component {
     state = {};
@@ -26,6 +28,8 @@ export default class Login extends React.Component {
                         Sports++ 后台管理系统
                     </div>
                 </div>
+
+
                 <div className={"login-content-wrap"}>
                     <div className={"login-content"}>
                         <div className={"word"}>Sports++ <br />你的比赛记录者</div>
@@ -79,8 +83,10 @@ class LoginForm extends React.Component {
                     }
                     else
                     {
-                        message.warn('用户名或者密码错误');
+                        message.error('用户名或者密码错误');
                     }
+                }).catch((error)=>{
+                    console.warn(error);
                 })
             }
         });

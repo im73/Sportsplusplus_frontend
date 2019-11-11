@@ -16,7 +16,7 @@ export default class SimpleChartComponent extends React.Component {
             method: 'get',
             dataType: 'jsonp',
         }).then((res) => {
-            if (res.status == 200) {
+            if (res.status === 200) {
                 console.log(res.data)
 
                 this.setState({

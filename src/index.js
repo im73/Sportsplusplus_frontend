@@ -4,7 +4,7 @@ import './index.css';
 // import Life from './pages/demo/Life';
 import * as serviceWorker from './serviceWorker';
 import  ERouter from './router';
-window.location.href = '/#/login';
+
 ReactDOM.render(<ERouter />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

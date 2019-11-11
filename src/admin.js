@@ -1,5 +1,5 @@
 import React from 'react'
-import {Row} from 'antd'
+import {Breadcrumb, Icon, Row} from 'antd'
 import Col from "antd/es/grid/col";
 import  Header from './components/Header'
 import  Footer from './components/Footer'
@@ -11,7 +11,6 @@ export default  class Admin extends React.Component
         username:'',
     }
     componentWillMount() {
-
        this.setState({
            username: window.location.href.split('=').pop(),
        })
@@ -28,9 +27,6 @@ export default  class Admin extends React.Component
                     <Row className="main_content">
                         {this.props.children}
                     </Row>
-
-
-
                 </Col>
                 <Col span={20} >
                     <Footer/>
